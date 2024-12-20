@@ -9,5 +9,3 @@
 <div align="center">
   <p>Struggle one more time to never struggle again :heart:</p>
 </div>
-
-My `NVIM config` Based on [💤 lazy.nvim](https://github.com/folke/lazy.nvim)
