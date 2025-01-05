@@ -5,3 +5,4 @@ end
 map('<C-r>', '<nop>')
 map('U', '<C-r>', { desc = 'Redo' })
 map(';', ':', { desc = 'Enter command mode' })
+map('<Esc>', '<cmd>nohlsearch<CR>')
