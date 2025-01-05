@@ -57,6 +57,7 @@ return {
         defaults = {
           mappings = {
             i = {
+              ['<C-e>'] = { '<esc>', type = 'command' },
               ['<esc>'] = actions.close,
             },
           },

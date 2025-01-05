@@ -10,9 +10,9 @@ require('lazy').setup({
   require 'plugins.kickstart.tokyonight',
   require 'plugins.kickstart.todo-comments',
   require 'plugins.kickstart.mini',
+  require 'plugins.kickstart.treesitter',
 
   -- TODO: check these other plugins
-  -- require 'plugins.others.treesitter',
   -- require 'plugins.others.debug',
   -- require 'plugins.others.indent_line',
   -- require 'plugins.others.lint',
