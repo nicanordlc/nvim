@@ -1,3 +1,8 @@
+---Installs the linter binary and returns the name so
+---the lint knows how to call the binary.
+---
+---@param opts { name: string, suffix: string }
+---@return string
 local ensure_installed = function(opts)
   local name = opts[1]
   local suffix = opts[2] or ''

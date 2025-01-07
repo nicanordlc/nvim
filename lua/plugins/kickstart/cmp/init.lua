@@ -36,7 +36,6 @@ return {
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
-      local keymaps = require 'plugins.kickstart.cmp.keymaps'
 
       luasnip.config.setup {}
 
@@ -47,7 +46,7 @@ return {
           end,
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
-        mapping = keymaps.setup(),
+        mapping = require('plugins.kickstart.cmp.keymaps').setup(),
         sources = {
           {
             name = 'lazydev',
