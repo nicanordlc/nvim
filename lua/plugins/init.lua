@@ -9,7 +9,6 @@ require('lazy').setup({
   require 'plugins.kickstart.cmp',
   require 'plugins.kickstart.tokyonight',
   require 'plugins.kickstart.todo-comments',
-  require 'plugins.kickstart.mini',
   require 'plugins.kickstart.treesitter',
 
   -- TODO: check these other plugins
