@@ -16,8 +16,8 @@ require('lazy').setup({
   -- require 'plugins.others.debug',
   require 'plugins.others.indent-line',
   require 'plugins.others.lint',
-  -- require 'plugins.others.autopairs',
-  -- require 'plugins.others.neo-tree',
+  require 'plugins.others.autopairs',
+  require 'plugins.others.neo-tree',
 
   { import = 'plugins.nica' },
 }, {
