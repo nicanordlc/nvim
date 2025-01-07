@@ -1,11 +1,11 @@
 local M = {}
 
 local map = function(key, callback, opts)
-  local desc_prefix = '[F]ind'
+  local desc_prefix = '[s]earch'
   local options = vim.tbl_extend('force', opts, {
     desc = desc_prefix .. ' ' .. opts.desc,
   })
-  vim.keymap.set('n', '<leader>f' .. key, callback, options)
+  vim.keymap.set('n', '<leader>s' .. key, callback, options)
 end
 
 M.setup = function()
