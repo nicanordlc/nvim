@@ -5,7 +5,14 @@ end
 map('n', 'x', '<cmd>qa<cr>', { desc = 'Close neovim' })
 map('n', 'X', '<cmd>qa!<cr>', { desc = 'Close neovim forced' })
 map('n', 'e', '<cmd>e!<cr>', { desc = 'Force edit on current buffer' })
-map({ 'n', 'v' }, 'R', ':%s;', { desc = '[R]eplace in buffer' })
+map({ 'n', 'v' }, 'R', function()
+  local mode = vim.api.nvim_get_mode().mode
+  if mode == 'V' then
+    vim.api.nvim_feedkeys(':s;', 'n', false)
+  else
+    vim.api.nvim_feedkeys(':%s;', 'n', false)
+  end
+end, { desc = '[R]eplace in buffer' })
 map({ 'n', 'v' }, 'y', '"+y', { desc = '[y]ank to clipboard' })
 -- group: q
 map('n', 'qb', '<cmd>bd<cr>', { desc = 'quit [b]uffer' })
