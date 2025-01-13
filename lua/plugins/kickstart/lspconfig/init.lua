@@ -46,7 +46,15 @@ return {
         vim.diagnostic.config { signs = { text = diagnostic_signs } }
       end
 
-      require('mason').setup()
+      require('mason').setup {
+        ui = {
+          icons = {
+            package_installed = '✓',
+            package_pending = '➜',
+            package_uninstalled = '✗',
+          },
+        },
+      }
 
       local servers = require 'plugins.kickstart.lspconfig.servers'
 
