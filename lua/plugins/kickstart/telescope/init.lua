@@ -55,6 +55,7 @@ return {
       local actions = require 'telescope.actions'
       require('telescope').setup {
         defaults = {
+          file_ignore_patterns = { '^.git' },
           mappings = {
             i = {
               ['<C-e>'] = { '<esc>', type = 'command' },
@@ -79,4 +80,3 @@ return {
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et

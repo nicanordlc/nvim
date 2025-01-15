@@ -13,7 +13,9 @@ M.setup = function()
   local builtin = require 'telescope.builtin'
   map('h', builtin.help_tags, { desc = '[h]elp' })
   map('k', builtin.keymaps, { desc = '[k]eymaps' })
-  map('f', builtin.find_files, { desc = '[f]iles' })
+  map('f', function()
+    builtin.find_files { hidden = true }
+  end, { desc = '[f]iles' })
   map('s', builtin.builtin, { desc = '[s]elect Telescope' })
   map('w', builtin.grep_string, { desc = 'current [w]ord' })
   map('g', builtin.live_grep, { desc = 'by [g]rep' })
@@ -21,6 +23,7 @@ M.setup = function()
   map('r', builtin.resume, { desc = '[r]esume' })
   map('.', builtin.oldfiles, { desc = 'recent Files ("." for repeat)' })
   map('b', builtin.buffers, { desc = 'existing [b]uffers' })
+  map('c', builtin.commands, { desc = '[c]ommands' })
 
   -- Slightly advanced example of overriding default behavior and theme
   vim.keymap.set('n', '<leader>/', function()
