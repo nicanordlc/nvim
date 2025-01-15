@@ -31,8 +31,8 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-          require('plugins.kickstart.lspconfig.keymaps').setup(event)
-          require('plugins.kickstart.lspconfig.autocmd').setup(event)
+          require('plugins.nica.lspconfig.keymaps').setup(event)
+          require('plugins.nica.lspconfig.autocmd').setup(event)
         end,
       })
 
@@ -56,7 +56,7 @@ return {
         },
       }
 
-      local servers = require 'plugins.kickstart.lspconfig.servers'
+      local servers = require('plugins.nica.lspconfig.servers').setup()
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
@@ -74,7 +74,7 @@ return {
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            server.capabilities = require('plugins.kickstart.lspconfig.capabilities').setup(server)
+            server.capabilities = require('plugins.nica.lspconfig.capabilities').setup(server)
             require('lspconfig')[server_name].setup(server)
           end,
         },
