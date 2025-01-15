@@ -55,6 +55,8 @@ return {
       local actions = require 'telescope.actions'
       require('telescope').setup {
         defaults = {
+          layout_strategy = 'vertical',
+          layout_config = { height = 0.95 },
           file_ignore_patterns = { '^.git' },
           mappings = {
             i = {
