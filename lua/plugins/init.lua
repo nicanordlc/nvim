@@ -4,10 +4,7 @@ require('lazy').setup({
   require 'plugins.kickstart.gitsigns',
   require 'plugins.kickstart.which-key',
   require 'plugins.kickstart.telescope',
-  require 'plugins.kickstart.conform',
   require 'plugins.kickstart.cmp',
-  require 'plugins.kickstart.tokyonight',
-  require 'plugins.kickstart.todo-comments',
   require 'plugins.kickstart.treesitter',
 
   -- TODO: check these other plugins
