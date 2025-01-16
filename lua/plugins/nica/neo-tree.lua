@@ -14,6 +14,13 @@ return {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
+    window = {
+      position = 'float',
+      mappings = {
+        [']c'] = 'next_git_modified',
+        ['[c'] = 'prev_git_modified',
+      },
+    },
     filesystem = {
       window = {
         mappings = {
