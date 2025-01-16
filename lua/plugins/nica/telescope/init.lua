@@ -78,7 +78,7 @@ return {
       pcall(require('telescope').load_extension, 'ui-select')
 
       -- Enable keymaps
-      require('plugins.kickstart.telescope.keymaps').setup()
+      require('plugins.nica.telescope.keymaps').setup()
     end,
   },
 }

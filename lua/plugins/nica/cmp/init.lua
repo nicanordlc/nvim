@@ -47,7 +47,7 @@ return {
           end,
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
-        mapping = require('plugins.kickstart.cmp.keymaps').setup(),
+        mapping = require('plugins.nica.cmp.keymaps').setup(),
         sources = {
           {
             name = 'lazydev',
