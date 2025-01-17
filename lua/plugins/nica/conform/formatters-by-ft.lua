@@ -17,8 +17,8 @@ local formatters_by_ft = {
     {
       lsp_disabled = true,
       settings = function()
-        local cmd = 'EslintFixAll'
-        if vim.fn.exists(cmd) then
+        local cmd = ':EslintFixAll'
+        if vim.fn.exists(cmd) > 0 then
           vim.cmd(cmd)
         end
         -- return empty so conform api doesn't break
