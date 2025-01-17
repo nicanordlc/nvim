@@ -27,10 +27,7 @@ return {
           lsp_format = utils.get_lsp_format_opt(),
         }
       end,
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        typescript = utils.eslint_format,
-      },
+      formatters_by_ft = utils.get_formatters_by_ft(),
     },
   },
 }
