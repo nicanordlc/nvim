@@ -7,7 +7,9 @@ return {
       local lint = require 'lint'
 
       lint.linters_by_ft = {
-        markdown = { utils.ensure_installed { 'markdownlint', '-cli' } },
+        markdown = {
+          utils.ensure_installed { 'markdownlint', '-cli' },
+        },
       }
 
       -- Create autocommand which carries out the actual linting

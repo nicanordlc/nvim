@@ -12,8 +12,12 @@ local M = {}
 
 M.setup = function()
   return {
+    -- formatters
+    shfmt = {},
+    -- language servers
     eslint = {},
     phpactor = {},
+    bashls = {},
     lua_ls = {
       settings = {
         Lua = {
