@@ -17,3 +17,10 @@ map({ 'n', 'v' }, 'y', '"+y', { desc = '[y]ank to clipboard' })
 -- group: q
 map('n', 'qb', '<cmd>bd<cr>', { desc = 'quit [b]uffer' })
 map('n', 'qa', '<cmd>bufdo bd<cr>', { desc = 'quit [a]ll buffers' })
+-- group: p
+map('n', 'pl', function()
+  require('persistence').load()
+end, { desc = 'persistence [l]oad' })
+map('n', 'ps', function()
+  require('persistence').select()
+end, { desc = 'persistence [s]elect' })

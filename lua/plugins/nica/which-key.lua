@@ -67,6 +67,7 @@ return {
         { '<leader>t', group = '[t]oggle' },
         { '<leader>h', group = 'Git [h]unk', mode = { 'n', 'v' } },
         { '<leader>q', group = '[q]uit' },
+        { '<leader>p', group = '[p]ersistence' },
         { '<leader><leader>', group = '[ ] Flash characters' },
       },
     },
