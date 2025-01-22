@@ -3,7 +3,10 @@ local map = function(mode, key, callback, opts)
 end
 
 map('n', 'x', '<cmd>qa<cr>', { desc = 'Close neovim' })
-map('n', 'X', '<cmd>qa!<cr>', { desc = 'Close neovim forced' })
+map('n', 'X', function()
+  require('persistence').stop()
+  vim.cmd 'qa!'
+end, { desc = 'Close neovim forced' })
 map('n', 'e', '<cmd>e!<cr>', { desc = 'Force edit on current buffer' })
 map({ 'n', 'v' }, 'R', function()
   local mode = vim.api.nvim_get_mode().mode
@@ -24,3 +27,6 @@ end, { desc = 'persistence [l]oad' })
 map('n', 'ps', function()
   require('persistence').select()
 end, { desc = 'persistence [s]elect' })
+map('n', 'pq', function()
+  require('persistence').stop()
+end, { desc = 'persistence [q]uit' })
