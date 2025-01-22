@@ -47,6 +47,11 @@ M.setup = function()
   map('n', function()
     builtin.find_files { cwd = vim.fn.stdpath 'config', follow = true }
   end, { desc = '[n]eovim files' })
+
+  -- search on plugins source
+  map('p', function()
+    builtin.find_files { cwd = (vim.fn.stdpath 'data') .. '/lazy', follow = true }
+  end, { desc = '[p]lugin files' })
 end
 
 return M

@@ -24,6 +24,9 @@ return {
       lua = {
         { 'luajit', '[#file]' },
       },
+      sh = {
+        { 'bash', '[#file]' },
+      },
     },
   },
 }
