@@ -1,3 +1,6 @@
+-- patches
+vim.hl = vim.highlight
+
 --  NOTE: Leader must be declared before plugins init
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
