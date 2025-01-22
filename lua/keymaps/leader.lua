@@ -3,11 +3,21 @@ local map = function(mode, key, callback, opts)
 end
 
 map('n', 'x', '<cmd>qa<cr>', { desc = 'Close neovim' })
-map('n', 'X', function()
-  require('persistence').stop()
-  vim.cmd 'qa!'
-end, { desc = 'Close neovim forced' })
 map('n', 'e', '<cmd>e!<cr>', { desc = 'Force edit on current buffer' })
+map({ 'n', 'v' }, 'y', '"+y', { desc = '[y]ank to clipboard' })
+-- group: q (quit)
+map('n', 'qb', '<cmd>bd<cr>', { desc = 'quit [b]uffer' })
+map('n', 'qa', '<cmd>bufdo bd<cr>', { desc = 'quit [a]ll buffers' })
+
+-- group: p (persistence)
+map('n', 'po', function()
+  require('persistence').load()
+end, { desc = 'persistence [o]pen session' })
+map('n', 'ps', function()
+  require('persistence').select()
+end, { desc = 'persistence [s]elect' })
+
+-- replace in buffer
 map({ 'n', 'v' }, 'R', function()
   local mode = vim.api.nvim_get_mode().mode
   if mode == 'V' then
@@ -16,17 +26,9 @@ map({ 'n', 'v' }, 'R', function()
     vim.api.nvim_feedkeys(':%s;', 'n', false)
   end
 end, { desc = '[R]eplace in buffer' })
-map({ 'n', 'v' }, 'y', '"+y', { desc = '[y]ank to clipboard' })
--- group: q
-map('n', 'qb', '<cmd>bd<cr>', { desc = 'quit [b]uffer' })
-map('n', 'qa', '<cmd>bufdo bd<cr>', { desc = 'quit [a]ll buffers' })
--- group: p
-map('n', 'pl', function()
-  require('persistence').load()
-end, { desc = 'persistence [l]oad' })
-map('n', 'ps', function()
-  require('persistence').select()
-end, { desc = 'persistence [s]elect' })
-map('n', 'pq', function()
+
+-- close nvim forced
+map('n', 'X', function()
   require('persistence').stop()
-end, { desc = 'persistence [q]uit' })
+  vim.cmd 'qa!'
+end, { desc = 'Close neovim forced' })
