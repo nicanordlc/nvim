@@ -8,6 +8,7 @@ map({ 'n', 'v' }, 'y', '"+y', { desc = '[y]ank to clipboard' })
 -- group: q (quit)
 map('n', 'qb', '<cmd>bd<cr>', { desc = 'quit [b]uffer' })
 map('n', 'qa', '<cmd>bufdo bd<cr>', { desc = 'quit [a]ll buffers' })
+map('n', 'qt', '<cmd>tabclose<cr>', { desc = 'quit [t]ab' })
 
 -- group: p (persistence)
 map('n', 'po', function()

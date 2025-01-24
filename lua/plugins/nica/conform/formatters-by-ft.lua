@@ -13,7 +13,7 @@ local formatters_by_ft = {
   { 'c', { disabled = true } },
   { 'cpp', { disabled = true } },
   {
-    { 'typescript', 'typescriptreact' },
+    { 'javascript', 'typescript', 'typescriptreact' },
     {
       lsp_disabled = true,
       settings = function()
