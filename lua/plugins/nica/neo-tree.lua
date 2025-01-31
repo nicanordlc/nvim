@@ -16,15 +16,13 @@ return {
   opts = {
     window = {
       position = 'float',
-      mappings = {
-        [']c'] = 'next_git_modified',
-        ['[c'] = 'prev_git_modified',
-      },
     },
     filesystem = {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          [']c'] = 'next_git_modified',
+          ['[c'] = 'prev_git_modified',
         },
       },
     },

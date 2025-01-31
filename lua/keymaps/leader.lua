@@ -1,16 +1,20 @@
+local checkQuit = require('keymaps.utils').checkQuit
+
 local map = function(mode, key, callback, opts)
   vim.keymap.set(mode, '<leader>' .. key, callback, opts)
 end
 
-map('n', 'x', '<cmd>qa<cr>', { desc = 'Close neovim' })
+map('n', 'x', checkQuit(), { desc = 'Close neovim' })
+map('n', 'X', checkQuit { force = true }, { desc = 'Close neovim forced' })
 map('n', 'e', '<cmd>e!<cr>', { desc = 'Force edit on current buffer' })
 map({ 'n', 'v' }, 'y', '"+y', { desc = '[y]ank to clipboard' })
 -- group: g (git)
 map('n', 'gd', '<cmd>DiffviewOpen<cr>', { desc = 'git [d]iff view' })
-map('n', 'gc', '<cmd>DiffviewClose<cr>', { desc = 'git [c]lose diff' })
+map('n', 'gq', '<cmd>DiffviewClose<cr>', { desc = 'git [q]uit diff' })
 map('n', 'gh', '<cmd>DiffviewFileHistory<cr>', { desc = 'git file [h]istory' })
 -- group: q (quit)
 map('n', 'qb', '<cmd>bd<cr>', { desc = 'quit [b]uffer' })
+map('n', 'qB', '<cmd>bd!<cr>', { desc = 'quit [B]uffer forced' })
 map('n', 'qa', '<cmd>bufdo bd<cr>', { desc = 'quit [a]ll buffers' })
 map('n', 'qt', '<cmd>tabclose<cr>', { desc = 'quit [t]ab' })
 
@@ -31,9 +35,3 @@ map({ 'n', 'v' }, 'R', function()
     vim.api.nvim_feedkeys(':%s;', 'n', false)
   end
 end, { desc = '[R]eplace in buffer' })
-
--- close nvim forced
-map('n', 'X', function()
-  require('persistence').stop()
-  vim.cmd 'qa!'
-end, { desc = 'Close neovim forced' })

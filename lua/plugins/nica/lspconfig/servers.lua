@@ -15,6 +15,9 @@ M.setup = function()
     -- formatters
     shfmt = {},
     -- language servers
+    ts_ls = {},
+    tailwindcss = {},
+    dockerls = {},
     eslint = {},
     phpactor = {},
     bashls = {},

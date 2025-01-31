@@ -58,7 +58,7 @@ return {
           layout_strategy = 'vertical',
           path_display = {
             shorten = {
-              len = 1,
+              len = 6,
               exclude = { -2, -1 },
             },
           },
