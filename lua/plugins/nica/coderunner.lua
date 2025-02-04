@@ -1,6 +1,5 @@
 return {
   'catgoose/coderunner.nvim',
-  event = 'BufReadPre',
   keys = {
     {
       '<leader>cc',
