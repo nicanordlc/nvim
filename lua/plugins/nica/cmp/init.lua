@@ -20,20 +20,34 @@ return {
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       local lspkind = require 'lspkind'
+      local cmp_tailwind = require 'tailwindcss-colorizer-cmp'
 
       luasnip.config.setup {}
 
       cmp.setup {
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
         ---@diagnostic disable-next-line: missing-fields
         formatting = {
-          format = lspkind.cmp_format {},
+          format = lspkind.cmp_format {
+            mode = 'symbol_text',
+            ellipsis_char = '...',
+            before = function(entry, item)
+              cmp_tailwind.formatter(entry, item)
+              return item
+            end,
+          },
         },
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = { completeopt = 'menu,menuone,noinsert' },
+        completion = {
+          completeopt = 'menu,menuone,noinsert',
+        },
         mapping = require('plugins.nica.cmp.keymaps').setup(),
         sources = {
           {

@@ -26,6 +26,9 @@ return {
       sh = {
         { 'bash', '[#file]' },
       },
+      html = {
+        { 'python3', '-m', 'http.server', '11080' },
+      },
     },
   },
 }
