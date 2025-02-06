@@ -8,8 +8,9 @@ M.checkQuit = function(opts)
 
   return function()
     local diffview_active = require('plugins.nica.diffview.options').active
+    local git_edit_stash_active = vim.g.ges
 
-    if diffview_active or opts.force then
+    if diffview_active or git_edit_stash_active or opts.force then
       require('persistence').stop()
     end
 
