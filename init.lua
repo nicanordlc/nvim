@@ -13,5 +13,6 @@ require 'autocmd'
 require 'keymaps'
 require 'lazy-bootstrap'
 require 'plugins'
+require 'snippets.init'
 
 -- vim: ts=2 sts=2 sw=2 et

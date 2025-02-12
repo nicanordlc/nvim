@@ -4,9 +4,7 @@ return {
     vim.g.barbar_auto_setup = false
   end,
   config = function()
-    local barbar = require 'barbar'
-
-    barbar.setup {}
+    require('barbar').setup {}
 
     require('plugins.nica.barbar.keymaps').setup()
   end,

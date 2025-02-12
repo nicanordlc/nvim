@@ -25,6 +25,9 @@ M.setup = function()
   M.map('n', 'ps', function()
     require('persistence').select()
   end, { desc = 'persistence [s]elect' })
+  M.map('n', 'pq', function()
+    require('persistence').stop()
+  end, { desc = 'persistence [q]uit' })
 
   -- replace in buffer
   M.map({ 'n', 'v' }, 'R', function()
