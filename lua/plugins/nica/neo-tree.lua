@@ -11,15 +11,14 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree reveal float<cr>', desc = 'NeoTree float', silent = true },
+    { '|', ':Neotree reveal left<cr>', desc = 'NeoTree left', silent = true },
   },
   opts = {
-    window = {
-      position = 'float',
-    },
     filesystem = {
       window = {
         mappings = {
+          ['|'] = 'close_window',
           ['\\'] = 'close_window',
           [']c'] = 'next_git_modified',
           ['[c'] = 'prev_git_modified',
