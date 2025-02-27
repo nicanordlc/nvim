@@ -22,8 +22,8 @@ add_snippets({ 'javascript', 'typescript', 'typescriptreact' }, {
     fmt(
       [[
       console.log(
-        '%c{{0}}'.replace('{{0}}', `!@${{{}}}`),
-        'background-color: {}; color: white; font-size: 23px;',
+      '%c{{0}}'.replace('{{0}}', `!@${{{}}}`),
+      'background-color: {}; color: white; font-size: 23px;',
       )
       ]],
       {
@@ -31,6 +31,7 @@ add_snippets({ 'javascript', 'typescript', 'typescriptreact' }, {
         c(2, {
           t 'black',
           t 'green',
+          t 'orange',
         }),
       }
     )
