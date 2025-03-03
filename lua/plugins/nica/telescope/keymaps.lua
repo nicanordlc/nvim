@@ -3,7 +3,7 @@ local utils = require 'plugins.nica.telescope.utils'
 
 local M = {}
 
-local mapS = function(key, callback, opts)
+local map = function(key, callback, opts)
   local desc_prefix = 'search'
   local options = vim.tbl_extend('force', opts, {
     desc = desc_prefix .. ' ' .. opts.desc,
@@ -14,23 +14,25 @@ end
 M.setup = function()
   -- See `:help telescope.builtin`
   local builtin = require 'telescope.builtin'
-  mapS('h', builtin.help_tags, { desc = '[h]elp' })
-  mapS('k', builtin.keymaps, { desc = '[k]eymaps' })
-  mapS('f', function()
+  map('h', builtin.help_tags, { desc = '[h]elp' })
+  map('k', builtin.keymaps, { desc = '[k]eymaps' })
+  map('f', function()
     builtin.find_files { hidden = true }
   end, { desc = '[f]iles' })
-  mapS('s', builtin.builtin, { desc = '[s]elect Telescope' })
-  mapS('w', builtin.grep_string, { desc = 'current [w]ord' })
-  mapS('g', builtin.live_grep, { desc = 'by [g]rep' })
-  mapS('d', builtin.diagnostics, { desc = '[d]iagnostics' })
-  mapS('r', builtin.resume, { desc = '[r]esume' })
-  mapS('.', builtin.oldfiles, { desc = 'recent Files ("." for repeat)' })
-  mapS('b', builtin.buffers, { desc = 'existing [b]uffers' })
-  mapS('c', builtin.commands, { desc = '[c]ommands' })
+  map('s', builtin.builtin, { desc = '[s]elect Telescope' })
+  map('w', builtin.grep_string, { desc = 'current [w]ord' })
+  map('g', builtin.live_grep, { desc = 'by [g]rep' })
+  map('d', builtin.diagnostics, { desc = '[d]iagnostics' })
+  map('r', builtin.resume, { desc = '[r]esume' })
+  map('.', builtin.oldfiles, { desc = 'recent Files ("." for repeat)' })
+  map('b', builtin.buffers, { desc = 'existing [b]uffers' })
+  map('c', builtin.commands, { desc = '[c]ommands' })
+  map('D', '<cmd>GrepInDirectory<cr>', { desc = 'words in [D]irectory' })
+  map('F', '<cmd>FileInDirectory<CR>', { desc = '[F]iles in directory' })
 
   -- It's also possible to pass additional configuration options.
   --  See `:help telescope.builtin.live_grep()` for information about particular keys
-  mapS('/', function()
+  map('/', function()
     builtin.live_grep {
       grep_open_files = true,
       prompt_title = 'Live Grep in Open Files',
@@ -38,12 +40,12 @@ M.setup = function()
   end, { desc = '[/] in Open Files' })
 
   -- Shortcut for searching your Neovim configuration files
-  mapS('n', function()
+  map('n', function()
     builtin.find_files { cwd = vim.fn.stdpath 'config', follow = true }
   end, { desc = '[n]eovim files' })
 
   -- search on plugins source
-  mapS('p', function()
+  map('p', function()
     builtin.find_files { cwd = (vim.fn.stdpath 'data') .. '/lazy', follow = true }
   end, { desc = '[p]lugin files' })
 
