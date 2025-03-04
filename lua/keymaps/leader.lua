@@ -28,6 +28,9 @@ M.setup = function()
   M.map('n', 'pq', function()
     require('persistence').stop()
   end, { desc = 'persistence [q]uit' })
+  M.map('n', 'pp', function()
+    vim.g.persistence_disabled = false
+  end, { desc = 'persistence [p]roceed' })
 
   -- replace in buffer
   M.map({ 'n', 'v' }, 'R', function()
