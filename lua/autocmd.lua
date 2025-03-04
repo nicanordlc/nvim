@@ -1,3 +1,6 @@
+local utils = require 'utils'
+local set_variable_on_all_buffers = utils.set_variable_on_all_buffers
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -46,9 +49,14 @@ end, {
 })
 
 -- enable autoformat
-vim.api.nvim_create_user_command('FormatEnable', function()
-  vim.b.disable_autoformat = false
-  vim.g.disable_autoformat = false
+vim.api.nvim_create_user_command('FormatEnable', function(args)
+  if args.bang then
+    vim.b.disable_autoformat = false
+  else
+    vim.g.disable_autoformat = false
+    set_variable_on_all_buffers('disable_autoformat', false)
+  end
 end, {
   desc = 'Re-enable autoformat-on-save',
+  bang = true,
 })
