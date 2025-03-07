@@ -7,7 +7,7 @@ local M = {}
 --
 -- No, but seriously. Please read `:help ins-completion`, it is really good!
 M.setup = function()
-  local luasnip_keymaps = require 'plugins.nica.luasnip.keymaps'
+  local luasnip_keymaps = require 'plugins.nica.luasnip.keys'
 
   local cmp_insert_mappings = cmp.mapping.preset.insert {
     -- Select the [n]ext item

@@ -14,7 +14,7 @@ return {
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
-      on_attach = require('plugins.nica.gitsigns.keymaps').setup,
+      on_attach = require('plugins.nica.gitsigns.keys').setup,
     },
   },
 }

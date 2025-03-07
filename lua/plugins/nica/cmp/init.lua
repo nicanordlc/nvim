@@ -48,7 +48,7 @@ return {
         completion = {
           completeopt = 'menu,menuone,noinsert',
         },
-        mapping = require('plugins.nica.cmp.keymaps').setup(),
+        mapping = require('plugins.nica.cmp.keys').setup(),
         sources = {
           {
             name = 'lazydev',

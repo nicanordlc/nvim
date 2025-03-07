@@ -1,5 +1,4 @@
-local utils = require 'utils'
-local set_variable_on_all_buffers = utils.set_variable_on_all_buffers
+local set_variable_on_all_buffers = require 'utils.set-variable-on-all-buffers'
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

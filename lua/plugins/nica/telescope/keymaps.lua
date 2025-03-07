@@ -1,4 +1,4 @@
-local mapL = require('keymaps.leader').map
+local mapL = require('keymaps.map').L
 local utils = require 'plugins.nica.telescope.utils'
 
 local M = {}

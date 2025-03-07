@@ -1,5 +1,5 @@
-local mapL = require('keymaps.leader').map
-local mapN = require('keymaps.normal').map
+local mapL = require('keymaps.map').L
+local mapN = require('keymaps.map').N
 
 local M = {}
 
@@ -12,7 +12,7 @@ M.setup = function()
   -- leader
   mapL('n', 'qb', '<cmd>BufferClose<cr>', { desc = 'quit [b]uffer' })
   mapL('n', 'qB', '<cmd>BufferClose!<cr>', { desc = 'quit [b]uffer' })
-  mapL('n', 'qa', '<cmd>BufferCloseAllButCurrentOrPinned<cr>', { desc = 'quit [a]ll but current/pinned' })
+  mapL('n', 'qa', '<cmd>BufferCloseAllButCurrent<cr>', { desc = 'quit [a]ll but current/pinned' })
   mapL('n', '<leader>b', '<cmd>BufferPick<cr>', { desc = 'fuzzy find [b]uffer' })
   mapL('n', '>', '<cmd>BufferMoveNext<cr>', { desc = 'Move buffer right' })
   mapL('n', '<', '<cmd>BufferMovePrevious<cr>', { desc = 'Move buffer left' })
