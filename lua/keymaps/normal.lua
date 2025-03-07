@@ -13,7 +13,6 @@ M.setup = function()
   M.map(']t', 'gt', { desc = 'Go to next [T]ab' })
   M.map('[t', 'gT', { desc = 'Go to previous [T]ab' })
   M.map('s', '<nop>')
-  M.map('==', '=ip', { desc = 'Indent current paragraph' })
 end
 
 return M
