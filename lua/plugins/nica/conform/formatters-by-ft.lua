@@ -12,6 +12,7 @@ local formatters_by_ft = {
   { 'lua', { settings = { 'stylua' } } },
   { 'c', { disabled = true } },
   { 'cpp', { disabled = true } },
+  { 'sql', { settings = { 'sleek', disabled = true } } },
   {
     { 'javascript', 'typescript', 'typescriptreact' },
     {
