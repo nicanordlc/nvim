@@ -14,7 +14,10 @@ M.setup = function()
   return {
     -- formatters
     shfmt = {},
+    sleek = {},
     -- language servers
+    sqlls = {},
+    pylsp = {},
     ts_ls = {},
     tailwindcss = {},
     dockerls = {},

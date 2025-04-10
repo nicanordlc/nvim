@@ -14,9 +14,15 @@ return {
     end
   end, { 'i', 's' }),
 
-  ['<C-c>'] = cmp.mapping(function()
+  ['<C-v>'] = cmp.mapping(function()
     if ls.choice_active() then
       ls.change_choice(1)
+    end
+  end),
+
+  ['<C-b>'] = cmp.mapping(function()
+    if ls.choice_active() then
+      ls.change_choice(-1)
     end
   end),
 }

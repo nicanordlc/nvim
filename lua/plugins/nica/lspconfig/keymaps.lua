@@ -29,7 +29,7 @@ M.setup = function(event)
 
   -- Fuzzy find all the symbols in your current workspace.
   --  Similar to document symbols, except searches over your entire project.
-  map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'workspace [s]ymbols')
+  map('<localleader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'workspace [s]ymbols')
 
   -- Rename the variable under your cursor.
   --  Most Language Servers support renaming across files, etc.
