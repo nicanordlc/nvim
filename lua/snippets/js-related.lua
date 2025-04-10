@@ -22,7 +22,7 @@ add_snippets({ 'javascript', 'typescript', 'typescriptreact' }, {
     fmt(
       [[
       console.log(
-      '%c{{0}}'.replace('{{0}}', `!@${{{}}}`),
+      '%c{{0}}'.replace('{{0}}', `!@{}`),
       'background-color: {}; color: white; font-size: 23px;',
       )
       ]],

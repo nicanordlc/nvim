@@ -21,7 +21,13 @@ M.setup = function()
   end, { desc = '[f]iles' })
   map('s', builtin.builtin, { desc = '[s]elect Telescope' })
   map('w', builtin.grep_string, { desc = 'current [w]ord' })
-  map('g', builtin.live_grep, { desc = 'by [g]rep' })
+  map('g', function()
+    builtin.live_grep {
+      additional_args = function()
+        return { '--hidden' }
+      end,
+    }
+  end, { desc = 'by [g]rep' })
   map('d', builtin.diagnostics, { desc = '[d]iagnostics' })
   map('r', builtin.resume, { desc = '[r]esume' })
   map('.', builtin.oldfiles, { desc = 'recent Files ("." for repeat)' })
@@ -29,6 +35,7 @@ M.setup = function()
   map('c', builtin.commands, { desc = '[c]ommands' })
   map('D', '<cmd>GrepInDirectory<cr>', { desc = 'words in [D]irectory' })
   map('F', '<cmd>FileInDirectory<CR>', { desc = '[F]iles in directory' })
+  map('t', '<cmd>TodoTelescope<cr>', { desc = '[t]odos in the repo' })
 
   -- It's also possible to pass additional configuration options.
   --  See `:help telescope.builtin.live_grep()` for information about particular keys

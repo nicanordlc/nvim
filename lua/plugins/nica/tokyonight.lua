@@ -15,5 +15,12 @@ return {
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
+    opts = {
+      on_highlights = function(hl, c)
+        hl.LspReferenceText = { bg = c.orange, fg = '#ffffff' }
+        hl.LspReferenceRead = { bg = c.orange, fg = '#ffffff' }
+        hl.LspReferenceWrite = { bg = c.orange, fg = '#ffffff' }
+      end,
+    },
   },
 }
