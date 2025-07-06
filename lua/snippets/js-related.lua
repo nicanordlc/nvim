@@ -32,6 +32,7 @@ add_snippets({ 'javascript', 'typescript', 'typescriptreact' }, {
           t 'black',
           t 'green',
           t 'orange',
+          t 'red',
         }),
       }
     )
