@@ -13,6 +13,8 @@ M.setup = function()
   M.map(']t', 'gt', { desc = 'Go to next [T]ab' })
   M.map('[t', 'gT', { desc = 'Go to previous [T]ab' })
   M.map('s', '<nop>')
+  M.map(']b', '<cmd>bnext<cr>', { desc = 'next [b]uffer' })
+  M.map('[b', '<cmd>bprevious<cr>', { desc = 'previous [b]uffer' })
 end
 
 return M

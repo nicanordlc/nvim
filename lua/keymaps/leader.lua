@@ -10,6 +10,11 @@ M.setup = function()
   M.map('n', 'w', '<cmd>w<cr>', { desc = '[w]rite current buffer' })
   M.map('n', 'W', '<cmd>wa<cr>', { desc = '[W]rite all buffers' })
 
+  M.map('n', 'qb', '<cmd>bd<cr>', { desc = 'quit [b]uffer' })
+
+  M.map('n', 'fd', '<cmd>FormatDisable<cr>', { desc = '[d]isable format' })
+  M.map('n', 'fe', '<cmd>FormatEnable<cr>', { desc = '[e]nable format' })
+
   M.map('n', 'x', checkQuit(), { desc = 'Close neovim' })
   M.map('n', 'X', checkQuit { force = true }, { desc = 'Close neovim forced' })
   M.map('n', 'e', '<cmd>e!<cr>', { desc = 'Force edit on current buffer' })
