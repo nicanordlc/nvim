@@ -27,13 +27,13 @@ M.setup = function()
         return { '--hidden' }
       end,
     }
-  end, { desc = 'by [g]rep' })
+  end, { desc = 'words by [g]rep' })
   map('d', builtin.diagnostics, { desc = '[d]iagnostics' })
   map('r', builtin.resume, { desc = '[r]esume' })
   map('.', builtin.oldfiles, { desc = 'recent Files ("." for repeat)' })
   map('b', builtin.buffers, { desc = 'existing [b]uffers' })
   map('c', builtin.commands, { desc = '[c]ommands' })
-  map('D', '<cmd>GrepInDirectory<cr>', { desc = 'words in [D]irectory' })
+  map('G', '<cmd>GrepInDirectory<cr>', { desc = 'words in directory by [G]rep' })
   map('F', '<cmd>FileInDirectory<CR>', { desc = '[F]iles in directory' })
   map('t', '<cmd>TodoTelescope<cr>', { desc = '[t]odos in the repo' })
 
