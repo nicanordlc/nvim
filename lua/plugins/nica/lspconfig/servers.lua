@@ -15,10 +15,11 @@ M.setup = function()
     -- formatters
     shfmt = {},
     sleek = {},
+    fixjson = {},
     -- language servers
+    gopls = {},
     sqlls = {},
     pylsp = {},
-    ts_ls = {},
     tailwindcss = {},
     dockerls = {},
     eslint = {},
@@ -33,6 +34,13 @@ M.setup = function()
         },
       },
     },
+  }
+end
+
+M.binaries = function()
+  return {
+    'stylua', -- Used to format Lua code
+    'ts_ls',
   }
 end
 
