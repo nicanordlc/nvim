@@ -2,6 +2,12 @@ return {
   'christoomey/vim-tmux-runner',
   keys = {
     {
+      '<localleader>r',
+      ':wa | VtrSendFile!<cr>',
+      mode = 'n',
+      desc = '[vtr] Send file to runner',
+    },
+    {
       'tr',
       ':wa | VtrSendCommandToRunner!<cr>',
       mode = 'n',
