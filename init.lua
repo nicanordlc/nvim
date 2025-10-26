@@ -11,6 +11,7 @@ vim.g.have_nerd_font = true
 require 'options'
 require 'options.filetypes.javascript'
 require 'autocmd'
+require 'usercommands'
 require 'keymaps'
 require 'lazy-bootstrap'
 require 'plugins'
