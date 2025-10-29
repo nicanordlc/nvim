@@ -1,3 +1,3 @@
-require 'options.kickstart'
-
-vim.g.persistence_disabled = true
+require 'options.g'
+require 'options.opt'
+require 'options.filetypes.javascript'

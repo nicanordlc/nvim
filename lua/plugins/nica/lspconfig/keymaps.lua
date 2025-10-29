@@ -42,15 +42,6 @@ M.setup = function(event)
   -- WARN: This is not Goto Definition, this is Goto Declaration.
   --  For example, in C this would take you to the header.
   map('gD', vim.lsp.buf.declaration, 'Goto [D]eclaration')
-
-  local hints_enabled = false
-  map('<leader>th', function()
-    hints_enabled = not hints_enabled
-    vim.diagnostic.config {
-      virtual_text = false,
-      virtual_lines = hints_enabled and { current_line = hints_enabled } or hints_enabled,
-    }
-  end, 'toggle Inlay [h]ints')
 end
 
 return M

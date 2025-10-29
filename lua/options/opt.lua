@@ -1,4 +1,5 @@
--- NOTE: For more options, you can see `:help option-list`
+vim.opt.wrap = true
+vim.opt.linebreak = true
 
 -- Make line numbers default
 vim.opt.number = true
@@ -44,5 +45,3 @@ vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
-
--- vim: ts=2 sts=2 sw=2 et
