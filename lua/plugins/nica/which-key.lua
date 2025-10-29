@@ -70,6 +70,7 @@ return {
         { '<leader>g', group = '[g]it', mode = { 'n', 'v' } },
         { '<leader>f', group = '[f]ormat', mode = { 'n' } },
         { '<leader><leader>', group = '[ ] fuzzy find', mode = { 'n', 'v' } },
+        { '<localleader>x', group = 'Trouble', mode = { 'n' } },
       },
     },
   },
