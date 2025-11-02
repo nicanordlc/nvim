@@ -13,11 +13,23 @@ for _, snippet_path in ipairs(snippet_files) do
   if basename ~= 'init.lua' and basename ~= 'utils.lua' then
     local file_loader = loadfile(snippet_path)
     ---@diagnostic disable-next-line: param-type-mismatch
-    local success = pcall(file_loader)
+    local success, error = pcall(file_loader)
 
     if not success then
       local message = string.format("'%s' did not load correctly.", format_path(snippet_path))
       vim.notify(message, vim.log.levels.INFO, { title = 'Load Snippets' })
+
+      vim.fn.setqflist {
+        {
+          filename = 'snippets_init',
+          lnum = 1,
+          col = 1,
+          text = error,
+          type = 'E',
+        },
+      }
+
+      vim.cmd 'copen'
     end
   end
 end
