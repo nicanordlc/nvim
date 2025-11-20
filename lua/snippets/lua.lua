@@ -24,6 +24,8 @@ function {}:new(config)
   return o
 end
 
+{}
+
 return {}
       ]],
       {
@@ -31,6 +33,7 @@ return {}
         rep(1),
         rep(1),
         rep(1),
+        i(2),
         rep(1),
       }
     )
